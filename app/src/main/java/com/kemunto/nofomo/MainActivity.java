@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v == mSearchButton) {
-            String location = mEventEditText.getText().toString();
+            String type = mEventEditText.getText().toString();
             Intent intent = new Intent(MainActivity.this, EventListActivity.class);
-//            intent.putExtra("type", type);
+            intent.putExtra("type", type);
             startActivity(intent);
         }
     }
