@@ -1,6 +1,8 @@
 package com.kemunto.nofomo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kemunto.nofomo.adapters.EventListAdapter;
 import com.kemunto.nofomo.models.Event;
 import com.kemunto.nofomo.models.SeatGeekEventsSearchResponse;
 import com.kemunto.nofomo.network.SeatApi;
@@ -27,13 +30,15 @@ import retrofit2.Response;
 public class EventListActivity extends AppCompatActivity {
     private static final String TAG = EventListActivity.class.getSimpleName();
 
-    @BindView(R.id.typeTextView)
-    TextView mTypeTextView;
-    @BindView(R.id.listView)
-    ListView mListView;
+    @BindView(R.id.recyclerView)
+    RecyclerView mRecyclerView;
     @BindView(R.id.errorTextView) TextView mErrorTextView;
     @BindView(R.id.progressBar)
     ProgressBar mProgressBar;
+
+    private EventListAdapter mAdapter;
+
+    public List<Event> occasions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,24 +46,42 @@ public class EventListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_event_list);
         ButterKnife.bind(this);
 
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String restaurant = ((TextView)view).getText().toString();
-                Toast.makeText(EventListActivity.this, restaurant, Toast.LENGTH_LONG).show();
-            }
-        });
-
         Intent intent = getIntent();
         String type = intent.getStringExtra("type");
-        mTypeTextView.setText("Here are all the events of type: " + type);
 
         SeatApi client = SeatClient.getClient();
 
-        Call<SeatGeekEventsSearchResponse> call = client.getEvents(type, "events");
+        Call<SeatGeekEventsSearchResponse> call = client.getOccasions(type, "occasions");
 
-//
+        call.enqueue(new Callback<SeatGeekEventsSearchResponse>() {
+            @Override
+            public void onResponse(Call<SeatGeekEventsSearchResponse> call, Response<SeatGeekEventsSearchResponse> response) {
+                hideProgressBar();
+
+                if (response.isSuccessful()) {
+                    occasions = response.body().getEvents();
+                    mAdapter = new EventListAdapter(EventListActivity.this, occasions);
+                    mRecyclerView.setAdapter(mAdapter);
+                    RecyclerView.LayoutManager layoutManager =
+                            new LinearLayoutManager(EventListActivity.this);
+                    mRecyclerView.setLayoutManager(layoutManager);
+                    mRecyclerView.setHasFixedSize(true);
+
+                    showEvents();
+                } else {
+                    showUnsuccessfulMessage();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<SeatGeekEventsSearchResponse> call, Throwable t) {
+                hideProgressBar();
+                showFailureMessage();
+            }
+
+        });
     }
+
 
     private void showFailureMessage() {
         mErrorTextView.setText("Something went wrong. Please check your Internet connection and try again later");
@@ -70,9 +93,8 @@ public class EventListActivity extends AppCompatActivity {
         mErrorTextView.setVisibility(View.VISIBLE);
     }
 
-    private void showRestaurants() {
-        mListView.setVisibility(View.VISIBLE);
-        mTypeTextView.setVisibility(View.VISIBLE);
+    private void showEvents() {
+
     }
 
     private void hideProgressBar() {

@@ -8,7 +8,7 @@ import retrofit2.http.Query;
 
 public interface SeatApi {
     @GET("events")
-    Call<SeatGeekEventsSearchResponse> getEvents(
+    Call<SeatGeekEventsSearchResponse> getOccasions(
             @Query("type") String type,
             @Query("q") String q
     );
