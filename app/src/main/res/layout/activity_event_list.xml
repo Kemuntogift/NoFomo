@@ -10,10 +10,12 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/typeTextView"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginTop="16dp"
         android:visibility="gone" />
+
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -23,10 +25,10 @@
         android:layout_centerInParent="true"/>
 
     <TextView
-        android:id="@+id/locationTextView"
+        android:id="@+id/typeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Events in "
+        android:text="Events of type"
         android:visibility="gone"/>
 
     <TextView

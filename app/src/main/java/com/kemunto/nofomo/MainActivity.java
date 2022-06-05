@@ -14,8 +14,8 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     @BindView(R.id.searchButton)
     Button mSearchButton;
-    @BindView(R.id.eventEditText)
-    EditText mEventEditText;
+    @BindView(R.id.typeEditText)
+    EditText mTypeEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v == mSearchButton) {
-            String type = mEventEditText.getText().toString();
+            String type = mTypeEditText.getText().toString();
             Intent intent = new Intent(MainActivity.this, EventListActivity.class);
             intent.putExtra("type", type);
             startActivity(intent);
