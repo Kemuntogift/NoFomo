@@ -50,7 +50,7 @@
         app:layout_constraintVertical_bias="0.083" />
 
     <EditText
-        android:id="@+id/event"
+        android:id="@+id/eventEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorTextIcons"
