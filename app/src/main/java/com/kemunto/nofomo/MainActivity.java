@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v == mSearchButton) {
             String location = mEventEditText.getText().toString();
             Intent intent = new Intent(MainActivity.this, EventListActivity.class);
-            intent.putExtra();
+//            intent.putExtra("type", type);
             startActivity(intent);
         }
     }
