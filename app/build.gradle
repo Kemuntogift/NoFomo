@@ -15,6 +15,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildTypes.each {
+        it.buildConfigField 'String', 'SEAT_API_KEY', SeatApiKey
+    }
+
     buildTypes {
         release {
             minifyEnabled false
