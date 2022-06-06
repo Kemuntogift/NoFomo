@@ -7,6 +7,9 @@ import com.google.gson.annotations.SerializedName;
 import com.kemunto.nofomo.DocumentSource__1;
 import com.kemunto.nofomo.Images__1;
 
+import org.parceler.Parcel;
+
+@Parcel
 @Generated("jsonschema2pojo")
 public class Genre {
 

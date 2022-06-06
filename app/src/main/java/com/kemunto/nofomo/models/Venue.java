@@ -1,12 +1,17 @@
 
 package com.kemunto.nofomo.models;
 
+import android.support.annotation.NonNull;
+
 import java.util.List;
 import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.kemunto.nofomo.models.Location;
 
+import org.parceler.Parcel;
+
+@Parcel
 @Generated("jsonschema2pojo")
 public class Venue {
 
@@ -311,4 +316,9 @@ public class Venue {
         this.displayLocation = displayLocation;
     }
 
+    @NonNull
+    @Override
+    public String toString() {
+        return String.format("%s, %s, %s %s", this.city, this.state, this.country);
+    }
 }

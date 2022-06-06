@@ -5,9 +5,11 @@ import java.util.List;
 import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.kemunto.nofomo.Stats__1;
-import com.kemunto.nofomo.Taxonomy__1;
 
+
+import org.parceler.Parcel;
+
+@Parcel
 @Generated("jsonschema2pojo")
 public class Event {
 

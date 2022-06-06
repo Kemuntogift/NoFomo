@@ -1,8 +1,10 @@
 
 package com.kemunto.nofomo.models;
 
-import javax.annotation.Generated;
+import org.parceler.Parcel;
 
+import javax.annotation.Generated;
+@Parcel
 @Generated("jsonschema2pojo")
 public class Announcements {
 

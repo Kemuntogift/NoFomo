@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kemunto.nofomo.R;
 import com.kemunto.nofomo.models.Event;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -49,7 +50,6 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
         @BindView(R.id.eventTitleTextView)
         TextView mEventTitleTextView;
         @BindView(R.id.performersTextView) TextView mPerformersTextView;
-        @BindView(R.id.statsTextView) TextView mStatsTextView;
 
         private Context mContext;
 
@@ -60,6 +60,7 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
         }
 
         public void bindOccasion(Event occasion) {
+
             mEventTitleTextView.setText(occasion.getTitle());
             mPerformersTextView.setText(occasion.getPerformers().get(0).getName());
         }
