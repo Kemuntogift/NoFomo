@@ -62,7 +62,6 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
         public void bindOccasion(Event occasion) {
             mEventTitleTextView.setText(occasion.getTitle());
             mPerformersTextView.setText(occasion.getPerformers().get(0).getName());
-            mStatsTextView.setText("Stats: " + occasion.getStats());
         }
     }
 }

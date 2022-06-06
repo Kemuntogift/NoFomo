@@ -30,11 +30,9 @@ import retrofit2.Response;
 public class EventListActivity extends AppCompatActivity {
     private static final String TAG = EventListActivity.class.getSimpleName();
 
-    @BindView(R.id.recyclerView)
-    RecyclerView mRecyclerView;
+    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
     @BindView(R.id.errorTextView) TextView mErrorTextView;
-    @BindView(R.id.progressBar)
-    ProgressBar mProgressBar;
+    @BindView(R.id.progressBar) ProgressBar mProgressBar;
 
     private EventListAdapter mAdapter;
 
@@ -51,7 +49,7 @@ public class EventListActivity extends AppCompatActivity {
 
         SeatApi client = SeatClient.getClient();
 
-        Call<SeatGeekEventsSearchResponse> call = client.getOccasions(type, "occasions");
+        Call<SeatGeekEventsSearchResponse> call = client.getOccasions(type);
 
         call.enqueue(new Callback<SeatGeekEventsSearchResponse>() {
             @Override
@@ -61,12 +59,12 @@ public class EventListActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     occasions = response.body().getEvents();
                     mAdapter = new EventListAdapter(EventListActivity.this, occasions);
-                    mRecyclerView.setAdapter(mAdapter);
+
                     RecyclerView.LayoutManager layoutManager =
                             new LinearLayoutManager(EventListActivity.this);
                     mRecyclerView.setLayoutManager(layoutManager);
                     mRecyclerView.setHasFixedSize(true);
-
+                    mRecyclerView.setAdapter(mAdapter);
                     showEvents();
                 } else {
                     showUnsuccessfulMessage();
@@ -94,10 +92,11 @@ public class EventListActivity extends AppCompatActivity {
     }
 
     private void showEvents() {
-
+        mRecyclerView.setVisibility(View.VISIBLE);
     }
 
     private void hideProgressBar() {
+
         mProgressBar.setVisibility(View.GONE);
     }
 }

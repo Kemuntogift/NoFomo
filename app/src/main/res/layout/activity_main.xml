@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_dynamic_primary90"
+    android:background="@color/colorTextIcons"
     tools:context=".MainActivity">
 
     <ImageView
@@ -77,5 +77,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paragraph"
         app:layout_constraintVertical_bias="0.612" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
