@@ -39,7 +39,7 @@ public class EventDetailFragment extends Fragment {
     }
 
 
-    public static EventDetailFragment newInstance(Event, occasion) {
+    public static EventDetailFragment newInstance(Event occasion) {
         EventDetailFragment eventDetailFragment = new EventDetailFragment();
         Bundle args = new Bundle();
         args.putParcelable("occasion", Parcels.wrap(occasion));

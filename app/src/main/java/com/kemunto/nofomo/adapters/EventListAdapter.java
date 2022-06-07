@@ -1,6 +1,7 @@
 package com.kemunto.nofomo.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,9 +10,12 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.kemunto.nofomo.EventDetailActivity;
 import com.kemunto.nofomo.R;
 import com.kemunto.nofomo.models.Event;
 import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -44,7 +48,7 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
         return mOccasions.size();
     }
 
-    public class EventViewHolder extends RecyclerView.ViewHolder {
+    public class EventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         @BindView(R.id.eventImageView)
         ImageView mEventImageView;
         @BindView(R.id.eventTitleTextView)
@@ -57,12 +61,22 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+
+            itemView.setOnClickListener(this);
         }
 
         public void bindOccasion(Event occasion) {
 
             mEventTitleTextView.setText(occasion.getTitle());
             mPerformersTextView.setText(occasion.getPerformers().get(0).getName());
+        }
+        @Override
+        public void onClick(View v) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, EventDetailActivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("occasions", Parcels.wrap(mOccasions));
+            mContext.startActivity(intent);
         }
     }
 }
