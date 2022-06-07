@@ -6,21 +6,21 @@ Gift Kemunto
 This is app allows you to view events by types in the United States. One can also see the event title and performers. This has been made possible by the SeatGeek API.
 
 ## Types to choose from
-Concert
-Family
-Extreme Sports
-Olympic Sports
-Music Festival
-Theatre
-Classical
-Classical Opera
-Classical
-Classical Orchestral Instrumental
-Cirque du Soleil
-Broadway Tickets National
-Comedy
-Dance Performance Tour
-Film
+Concert,
+Family,
+Extreme Sports,
+Olympic Sports,
+Music Festival,
+Theatre,
+Classical,
+Classical Opera,
+Classical,
+Classical Orchestral Instrumental,
+Cirque du Soleil,
+Broadway Tickets National,
+Comedy,
+Dance Performance Tour,
+Film,
 Literary
 
 ## Prerequisites
