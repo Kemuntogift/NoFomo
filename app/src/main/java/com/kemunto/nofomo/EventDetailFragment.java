@@ -12,12 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kemunto.nofomo.models.Event;
-import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

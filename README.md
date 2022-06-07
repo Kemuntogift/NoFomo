@@ -3,7 +3,7 @@
 Gift Kemunto
 
 ## Description
-This is app allows you to view events by types in the United States. One can also see the event title and performers. This has been made possible by the SeatGeek API.
+This app allows you to view events by types in the United States. One can also see the event title and performers. This has been made possible by the SeatGeek API.
 
 ## Types to choose from
 Concert,

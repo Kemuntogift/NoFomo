@@ -11,7 +11,6 @@ import com.kemunto.nofomo.EventDetailFragment;
 import com.kemunto.nofomo.models.Event;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class EventPagerAdapter extends FragmentPagerAdapter {

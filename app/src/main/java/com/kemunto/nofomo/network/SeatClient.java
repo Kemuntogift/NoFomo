@@ -3,6 +3,9 @@ package com.kemunto.nofomo.network;
 import static com.kemunto.nofomo.BuildConfig.SEAT_API_KEY;
 import static com.kemunto.nofomo.Constants.SEAT_BASE_URL;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.IOException;
 
 import okhttp3.Interceptor;
@@ -29,11 +32,12 @@ public class SeatClient {
                         }
                     })
                     .build();
+            Gson gson = new GsonBuilder().serializeNulls().create();
 
             retrofit = new Retrofit.Builder()
                     .baseUrl(SEAT_BASE_URL)
                     .client(okHttpClient)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();
         }
 

@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.kemunto.nofomo.EventDetailActivity;
 import com.kemunto.nofomo.R;
 import com.kemunto.nofomo.models.Event;
-import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
