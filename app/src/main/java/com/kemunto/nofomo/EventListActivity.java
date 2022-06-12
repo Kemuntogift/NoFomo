@@ -26,12 +26,10 @@ import retrofit2.Response;
 
 public class EventListActivity extends AppCompatActivity {
     private static final String TAG = EventListActivity.class.getSimpleName();
-
+    private EventListAdapter mAdapter;
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
     @BindView(R.id.errorTextView) TextView mErrorTextView;
     @BindView(R.id.progressBar) ProgressBar mProgressBar;
-
-    private EventListAdapter mAdapter;
 
     public List<Event> occasions;
 

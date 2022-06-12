@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "473661961420",
+    "project_id": "nofomo-1ef24",
+    "storage_bucket": "nofomo-1ef24.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:473661961420:android:402345698fd0d618df3e69",
+        "android_client_info": {
+          "package_name": "com.kemunto.nofomo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "473661961420-3jjjop8o8eo6demij12f0a5jppt46bok.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kemunto.nofomo",
+            "certificate_hash": "6bf8ab218f8c7b1156da4b7bdb5f8c640d7d4041"
+          }
+        },
+        {
+          "client_id": "473661961420-l2qb28sms0cco1epp1vdbta7ei5sc32b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbQM15kdQJ0TU5Ev9N4IBLuqMfSCMAhB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "473661961420-l2qb28sms0cco1epp1vdbta7ei5sc32b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
