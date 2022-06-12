@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button mSearchButton;
     @BindView(R.id.typeEditText)
     EditText mTypeEditText;
+    @BindView(R.id.savedEventsButton) Button mSavedEventsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
 
         mSearchButton.setOnClickListener(this);
+        mSavedEventsButton.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
@@ -64,6 +66,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             saveTypeToFirebase(type);
             Intent intent = new Intent(MainActivity.this, EventListActivity.class);
             intent.putExtra("type", type);
+            startActivity(intent);
+        }
+        if (v == mSavedEventsButton) {
+            Intent intent = new Intent(MainActivity.this, SavedEventListActivity.class);
             startActivity(intent);
         }
     }
