@@ -49,21 +49,6 @@
         app:layout_constraintTop_toBottomOf="@+id/introduction"
         app:layout_constraintVertical_bias="0.083" />
 
-    <EditText
-        android:id="@+id/typeEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/colorTextIcons"
-        android:ems="10"
-        android:hint="Event Type"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.427"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.77" />
 
     <Button
         android:id="@+id/searchButton"
@@ -73,10 +58,9 @@
         android:text="View Events"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paragraph"
-        app:layout_constraintVertical_bias="0.612" />
+        app:layout_constraintVertical_bias="0.426" />
 
     <Button
         android:id="@+id/savedEventsButton"
@@ -93,7 +77,7 @@
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/concertImage"
-        app:layout_constraintVertical_bias="0.976"
+        app:layout_constraintVertical_bias="0.948"
         tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
