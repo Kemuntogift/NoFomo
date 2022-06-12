@@ -28,8 +28,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".EventListActivity"
-            android:exported="false" />
+            android:name=".EventListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kemunto.nofomo.MainActivity">
+            </meta-data>
+        </activity>
     </application>
 
 </manifest>
