@@ -38,14 +38,10 @@ public class FirebaseEventViewHolder extends RecyclerView.ViewHolder implements 
         ImageView eventImageView = (ImageView) mView.findViewById(R.id.eventImageView);
         TextView eventTitleTextView = (TextView) mView.findViewById(R.id.eventTitleTextView);
         TextView performersTextView = (TextView) mView.findViewById(R.id.performersTextView);
-        TextView websiteTextView = (TextView) mView.findViewById(R.id.websiteTextView);
-        TextView addressTextView = (TextView) mView.findViewById(R.id.addressTextView);
-
 
         eventTitleTextView.setText(occasion.getTitle());
         performersTextView.setText(occasion.getPerformers().get(0).getName());
-        websiteTextView.setText(occasion.getUrl());
-        addressTextView.setText(occasion.getVenue().toString());
+
     }
     @Override
     public void onClick(View view) {
