@@ -10,7 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.kemunto.nofomo.models.Event;
 
 import org.parceler.Parcels;
@@ -19,7 +22,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class EventDetailFragment extends Fragment {
+public class EventDetailFragment extends Fragment implements View.OnClickListener{
     @BindView(R.id.eventImageView) ImageView mImageLabel;
     @BindView(R.id.eventTitleTextView) TextView mNameLabel;
     @BindView(R.id.performersTextView) TextView mPerformersLabel;
@@ -65,6 +68,18 @@ public class EventDetailFragment extends Fragment {
         mWebsiteLabel.setText(mOccasion.getUrl());
         mAddressLabel.setText(mOccasion.getVenue().toString());
 
+        mSaveEventButton.setOnClickListener(this);
+
         return view;
+    }
+    @Override
+    public void onClick(View v) {
+        if (v == mSaveEventButton) {
+            DatabaseReference occasionRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_OCCASIONS);
+            occasionRef.push().setValue(mOccasion);
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+        }
     }
 }

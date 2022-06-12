@@ -48,9 +48,9 @@ public class Event {
     @SerializedName("visible_until_utc")
     @Expose
     private String visibleUntilUtc;
-    @SerializedName("stats")
-    @Expose
-    private Stats__1 stats;
+//    @SerializedName("stats")
+//    @Expose
+//    private Stats__1 stats;
     @SerializedName("taxonomies")
     @Expose
     private List<Taxonomy__1> taxonomies = null;
@@ -87,9 +87,9 @@ public class Event {
 //    @SerializedName("event_promotion")
 //    @Expose
 //    private Object eventPromotion;
-    @SerializedName("announcements")
-    @Expose
-    private Announcements announcements;
+//    @SerializedName("announcements")
+//    @Expose
+//    private Announcements announcements;
     @SerializedName("conditional")
     @Expose
     private Boolean conditional;
@@ -431,7 +431,7 @@ public class Event {
 //    }
 //
 
-    public Event(String type, Integer id, String datetimeUtc, Venue venue, Boolean datetimeTbd, List<Performer> performers, Boolean isOpen, String datetimeLocal, Boolean timeTbd, String shortTitle, String visibleUntilUtc, Stats__1 stats, List<Taxonomy__1> taxonomies, String url, Double score, String announceDate, String createdAt, Boolean dateTbd, String title, Double popularity, String description, String status, Announcements announcements, Boolean conditional, Boolean generalAdmission) {
+    public Event(String type, Integer id, String datetimeUtc, Venue venue, Boolean datetimeTbd, List<Performer> performers, Boolean isOpen, String datetimeLocal, Boolean timeTbd, String shortTitle, String visibleUntilUtc, List<Taxonomy__1> taxonomies, String url, Double score, String announceDate, String createdAt, Boolean dateTbd, String title, Double popularity, String description, String status, Boolean conditional, Boolean generalAdmission) {
         this.type = type;
         this.id = id;
         this.datetimeUtc = datetimeUtc;
@@ -443,7 +443,7 @@ public class Event {
         this.timeTbd = timeTbd;
         this.shortTitle = shortTitle;
         this.visibleUntilUtc = visibleUntilUtc;
-        this.stats = stats;
+//        this.stats = stats;
         this.taxonomies = taxonomies;
         this.url = url;
         this.score = score;
@@ -454,7 +454,7 @@ public class Event {
         this.popularity = popularity;
         this.description = description;
         this.status = status;
-        this.announcements = announcements;
+//        this.announcements = announcements;
         this.conditional = conditional;
         this.generalAdmission = generalAdmission;
     }
@@ -547,13 +547,13 @@ public class Event {
         this.visibleUntilUtc = visibleUntilUtc;
     }
 
-    public Stats__1 getStats() {
-        return stats;
-    }
-
-    public void setStats(Stats__1 stats) {
-        this.stats = stats;
-    }
+//    public Stats__1 getStats() {
+//        return stats;
+//    }
+//
+//    public void setStats(Stats__1 stats) {
+//        this.stats = stats;
+//    }
 
     public List<Taxonomy__1> getTaxonomies() {
         return taxonomies;
@@ -635,13 +635,13 @@ public class Event {
         this.status = status;
     }
 
-    public Announcements getAnnouncements() {
-        return announcements;
-    }
-
-    public void setAnnouncements(Announcements announcements) {
-        this.announcements = announcements;
-    }
+//    public Announcements getAnnouncements() {
+//        return announcements;
+//    }
+//
+//    public void setAnnouncements(Announcements announcements) {
+//        this.announcements = announcements;
+//    }
 
     public Boolean getConditional() {
         return conditional;
