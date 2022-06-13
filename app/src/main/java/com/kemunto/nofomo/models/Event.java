@@ -105,6 +105,7 @@ public class Event {
 //    @SerializedName("domain_information")
 //    @Expose
 //    private List<Object> domainInformation = null;
+private String pushId;
 
     /**
      * No args constructor for use in serialization
@@ -657,5 +658,12 @@ public class Event {
 
     public void setGeneralAdmission(Boolean generalAdmission) {
         this.generalAdmission = generalAdmission;
+    }
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 }
