@@ -28,7 +28,8 @@
             android:padding="10dp"
             android:textColor="@android:color/black"
             android:textColorHint="@color/colorDivider"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
         <EditText
             android:id="@+id/passwordEditText"
@@ -41,7 +42,8 @@
             android:padding="10dp"
             android:textColor="@android:color/black"
             android:textColorHint="@color/colorDivider"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
 
         <Button
@@ -52,7 +54,8 @@
             android:background="@color/colorAccent"
             android:padding="10dp"
             android:text="Log in"
-            android:textColor="@color/colorTextIcons" />
+            android:textColor="@color/colorTextIcons"
+            tools:ignore="TextContrastCheck" />
 
         <TextView
             android:id="@+id/registerTextView"
@@ -77,4 +80,20 @@
         android:textSize="30dp"
         android:textStyle="bold" />
 
+    <ProgressBar
+        android:id="@+id/firebaseProgressBar"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/loadingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/firebaseProgressBar"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_margin="20dp"
+        android:visibility="gone" />
 </RelativeLayout>
