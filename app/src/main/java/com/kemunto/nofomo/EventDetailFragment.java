@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.kemunto.nofomo.models.Event;
@@ -75,10 +77,17 @@ public class EventDetailFragment extends Fragment implements View.OnClickListene
     @Override
     public void onClick(View v) {
         if (v == mSaveEventButton) {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
             DatabaseReference occasionRef = FirebaseDatabase
                     .getInstance()
-                    .getReference(Constants.FIREBASE_CHILD_OCCASIONS);
-            occasionRef.push().setValue(mOccasion);
+                    .getReference(Constants.FIREBASE_CHILD_OCCASIONS)
+            .child(uid);
+
+            DatabaseReference pushRef = occasionRef.push();
+            String pushId = pushRef.getKey();
+            mOccasion.setPushId(pushId);
+            pushRef.setValue(mOccasion);
             Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
         }
     }
