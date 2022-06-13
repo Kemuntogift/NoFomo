@@ -1,8 +1,10 @@
 package com.kemunto.nofomo;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -70,8 +72,22 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
 
         if (view == mCreateUserButton) {
             createNewUser();
+            alert("User created");
         }
 
+    }
+    private void alert(String message){
+        AlertDialog dlg = new AlertDialog.Builder(CreateAccountActivity.this)
+                .setTitle("Message")
+                .setMessage(message)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int which){
+                        dialog.dismiss();
+                    }
+                })
+                .create();
+        dlg.show();
     }
 
 
