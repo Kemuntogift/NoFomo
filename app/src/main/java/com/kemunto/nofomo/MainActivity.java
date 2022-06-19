@@ -12,8 +12,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -29,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
+    @BindView(R.id.concertImage)
+    ImageView mConcertImage;
     @BindView(R.id.searchButton)
     Button mSearchButton;
     @BindView(R.id.introduction)
@@ -58,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mSearchButton.setOnClickListener(this);
         mSavedEventsButton.setOnClickListener(this);
+        mConcertImage.setOnClickListener(this);
     }
 
     @Override
@@ -83,6 +89,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v == mSavedEventsButton) {
             Intent intent = new Intent(MainActivity.this, SavedEventListActivity.class);
             startActivity(intent);
+        }
+        if (v == mConcertImage) {
+            YoYo.with(Techniques.Tada)
+                    .duration(900)
+                    .repeat(3)
+                    .playOn(mConcertImage);
         }
     }
     @Override
