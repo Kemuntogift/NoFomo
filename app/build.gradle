@@ -53,6 +53,8 @@ dependencies {
 // Parceler
     implementation 'org.parceler:parceler-api:1.1.12'
     annotationProcessor 'org.parceler:parceler:1.1.12'
+    //Daimajia
+    implementation 'com.daimajia.androidanimations:library:2.4@aar'
 
     //    Firebase
     implementation platform('com.google.firebase:firebase-bom:26.4.0')
