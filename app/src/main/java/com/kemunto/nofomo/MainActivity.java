@@ -91,9 +91,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
         if (v == mConcertImage) {
-            YoYo.with(Techniques.Tada)
+            YoYo.with(Techniques.ZoomInUp)
                     .duration(900)
-                    .repeat(3)
                     .playOn(mConcertImage);
         }
     }
