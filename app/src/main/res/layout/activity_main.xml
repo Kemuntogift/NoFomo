@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layoutAnimation="@anim/down_to_up"
     android:background="@color/colorTextIcons"
     tools:context=".MainActivity">
 
@@ -21,6 +20,7 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/concert" />
 
+
     <TextView
         android:id="@+id/introduction"
         android:layout_width="300dp"
@@ -31,10 +31,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.774"
+        app:layout_constraintHorizontal_bias="0.63"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/concertImage"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintVertical_bias="0.04" />
 
     <TextView
         android:id="@+id/paragraph"
@@ -45,11 +45,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintHorizontal_bias="0.64"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/introduction"
-        app:layout_constraintVertical_bias="0.083" />
-
+        app:layout_constraintVertical_bias="0.05" />
 
     <Button
         android:id="@+id/searchButton"
@@ -59,9 +58,10 @@
         android:text="View Events"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paragraph"
-        app:layout_constraintVertical_bias="0.426" />
+        app:layout_constraintVertical_bias="0.145" />
 
     <Button
         android:id="@+id/savedEventsButton"
@@ -76,9 +76,10 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/concertImage"
-        app:layout_constraintVertical_bias="0.948"
+        app:layout_constraintVertical_bias="0.885"
         tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

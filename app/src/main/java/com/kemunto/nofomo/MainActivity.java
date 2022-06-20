@@ -83,6 +83,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v == mSearchButton) {
+            YoYo.with(Techniques.Tada)
+                    .duration(1600)
+                    .playOn(mSearchButton);
             Intent intent = new Intent(MainActivity.this, EventListActivity.class);
             startActivity(intent);
         }

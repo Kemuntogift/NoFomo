@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -128,7 +129,6 @@ public class EventListActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     occasions = response.body().getEvents();
                     mAdapter = new EventListAdapter(EventListActivity.this, occasions);
-
                     mRecyclerView.setAdapter(mAdapter);
                     RecyclerView.LayoutManager layoutManager =
                             new LinearLayoutManager(EventListActivity.this);
