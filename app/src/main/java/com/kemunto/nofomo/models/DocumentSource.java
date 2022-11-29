@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Parcel;
 
-//@Parcel
+@Parcel
 @Generated("jsonschema2pojo")
 public class DocumentSource {
 
